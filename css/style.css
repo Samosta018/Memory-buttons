@@ -1,0 +1,153 @@
+@import url('reset.css');
+
+body {
+    background-image: url('../media/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
+}
+
+.memory-button {
+    width: 100%;
+    height: 100%;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    transition: all 0.3s;
+    border-radius: 10px;
+    aspect-ratio: 1 / 1;
+}
+
+.start-button {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #008CBA;
+    color: white;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.start-button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.start-button:not(:disabled):hover {
+    background-color: #007B9E;
+    transform: scale(1.05);
+}
+
+.start-button:not(:disabled):active {
+    background-color: #006080;
+    transform: scale(0.95);
+}
+
+.memory-button.active {
+    background-color: #ffcc00;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.score-display {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Для экранов меньше 1200px */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 400px;
+    }
+
+    .memory-button {
+        font-size: 20px;
+    }
+
+    .start-button {
+        font-size: 18px;
+    }
+}
+
+/* Для экранов меньше 768px (планшеты и мобильные устройства) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 300px;
+        gap: 10px;
+    }
+
+    .memory-button {
+        font-size: 18px;
+    }
+
+    .start-button {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+}
+
+/* Для экранов меньше 480px (мобильные устройства) */
+@media (max-width: 480px) {
+    .container {
+        max-width: 250px;
+        gap: 8px;
+    }
+
+    .memory-button {
+        font-size: 16px;
+    }
+
+    .start-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Для экранов меньше 320px (очень маленькие экраны) */
+@media (max-width: 320px) {
+    .container {
+        max-width: 200px;
+        gap: 5px;
+    }
+
+    .memory-button {
+        font-size: 14px;
+    }
+
+    .start-button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
